@@ -17,12 +17,14 @@ app.post('/', function (req, res) {
   const runAway = ['F','F','L','P'];
   if(prevScore < dataAboutMe.score) {
       res.send('T');
+  } else {
+    if(dataAboutMe.wasHit) {
+      res.send(runAway[Math.floor(Math.random() * runAway.length)])
+    }
+    res.send(moves[Math.floor(Math.random() * moves.length)]);
   }
   prevScore = dataAboutMe.score;
-  if(dataAboutMe.wasHit) {
-    res.send(runAway[Math.floor(Math.random() * runAway.length)])
-  }
-  res.send(moves[Math.floor(Math.random() * moves.length)]);
+
 //   res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
 
