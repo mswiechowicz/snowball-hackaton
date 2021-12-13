@@ -23,10 +23,7 @@ app.post('/', function (req, res) {
     if(dataAboutMe.wasHit) {
       res.send(runAway[Math.floor(Math.random() * runAway.length)])
     }
-    if(Number(prevScore) === Number(dataAboutMe.score)) {
-      res.send(moves[Math.floor(Math.random() * moves.length)]);
-    } else
-      res.send('T');
+    res.send(moves[Math.floor(Math.random() * moves.length)]);
   }
   prevScore = dataAboutMe.score;
 
