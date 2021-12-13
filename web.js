@@ -41,28 +41,28 @@ app.post('/', function (req, res) {
     Object.values(req.body.arena.state).forEach(el => {
       if(myDirection === 'N'){
         if(myX === el.x) {
-          if(myY - 1 === el.y || myY - 2 === el.y || myY - 3 === el.y) {
+          if(myY + 1 === el.y || myY + 2 === el.y || myY + 3 === el.y) {
             return 'T';
           }
         }
       }
       if(myDirection === 'S'){
         if(myX === el.x) {
-          if(myY + 1 === el.y || myY + 2 === el.y || myY + 3 === el.y) {
+          if(myY - 1 === el.y || myY - 2 === el.y || myY - 3 === el.y) {
             return 'T';
           }
         }
       }
       if(myDirection === 'E'){
         if(myY === el.y) {
-          if(myX + 1 === el.x || myX + 2 === el.x || myX + 3 === el.x) {
+          if(myX - 1 === el.x || myX - 2 === el.x || myX - 3 === el.x) {
             return 'T';
           }
         }
       }
       if(myDirection === 'W'){
         if(myY === el.y) {
-          if(myX - 1 === el.x || myX - 2 === el.x || myX - 3 === el.x) {
+          if(myX + 1 === el.x || myX + 2 === el.x || myX + 3 === el.x) {
             return 'T';
           }
         }
