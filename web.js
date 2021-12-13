@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   // console.log(req.body.arena.state[req.body._links.self.href]);
   const dataAboutMe = req.body.arena.state[req.body._links.self.href];
-  const moves = ['T','F','R'];
+  const moves = ['F','R'];
   const runAway = ['F','F','R'];
 
   if(prevScore < dataAboutMe.score) {
