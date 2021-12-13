@@ -24,13 +24,16 @@ app.post('/', function (req, res) {
   if(dataAboutMe.wasHit) {
       res.send(runAway[Math.floor(Math.random() * runAway.length)])
   }
-    if(counter < 4) {
-        res.send(moveOrShot[Math.floor(Math.random() * moveOrShot.length)]);
-        counter++;
-    } else {
-        res.send(moves[Math.floor(Math.random() * moves.length)]);
-        counter = 0;
-    }
+  if(counter < 4) {
+      if(prevScore < dataAboutMe.score)
+          res.send('T')
+      else
+          res.send('F')
+       counter++;
+  } else {
+      res.send(moves[Math.floor(Math.random() * moves.length)]);
+      counter = 0;
+  }
 //   res.send(moves[Math.floor(Math.random() * moves.length)]);
 });
 
