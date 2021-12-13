@@ -21,7 +21,7 @@ app.post('/', function (req, res) {
   if(prevScore < dataAboutMe.score) {
       action='T';
   } else {
-    if(dataAboutMe.wasHit || (prevScore > dataAboutMe.score)) {
+    if(dataAboutMe.wasHit) {
       action = runAway[Math.floor(Math.random() * runAway.length)];
     }
     if(lastAction === 'T')
